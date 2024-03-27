@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './components/Header';
 import ClubCard from './components/ClubCard';
 import EventCarousel from './components/EventCarousel';
+import Footer from './components/Footer';
 
 const clubs = [
   {
@@ -84,6 +85,7 @@ function App() {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

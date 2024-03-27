@@ -8,3 +8,21 @@
     height: 200px;
   }
 }
+
+.footer-link {
+  color: white; /* Change link color to white */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-link:hover {
+  color: lightgray; /* Change color on hover */
+}
+
+#footer-contact, #footer-social-media, #footer-quick-links {
+  list-style-type: none;
+  line-height: 40px;
+}
+
+#ft-sm-links {
+  margin-right: 10px;
+}
