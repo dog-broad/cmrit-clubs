@@ -1,28 +1,125 @@
 /* src/App.css */
-.carousel-item {
-  height: 400px;
+.container {
+  padding: 20px;
 }
 
-@media (max-width: 768px) {
-  .carousel-item {
-    height: 200px;
-  }
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Header */
+.navbar {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.navbar-brand .text-truncate {
+  max-width: 25ch;
+  font-size: 0.9rem;
+}
+
+/* Club Card */
+.card {
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
 }
 
 .footer-link {
-  color: white; /* Change link color to white */
-  text-decoration: none; /* Remove underline */
+  color: lightgray;
+  text-decoration: none;
+  list-style-type: none;
 }
 
-.footer-link:hover {
-  color: lightgray; /* Change color on hover */
-}
-
-#footer-contact, #footer-social-media, #footer-quick-links {
+#footer-contact,
+#footer-quick-links {
   list-style-type: none;
   line-height: 40px;
 }
 
 #ft-sm-links {
   margin-right: 10px;
+}
+
+
+/* Social media icons */
+#footer-social-media .footer-link,
+#footer-contact {
+  margin-left: 5px;
+  list-style-type: none;
+  text-decoration: none;
+  line-height: 40px;
+}
+
+#footer-social-media .footer-link:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Animation for Event Carousel */
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .carousel-inner {
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation for Club Cards */
+.club-card-animation-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.club-card-animation-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.club-card-animation-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.club-card-animation-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s, transform 0.5s;
 }

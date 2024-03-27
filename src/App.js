@@ -77,7 +77,7 @@ function App() {
         <EventCarousel events={events} />
         <hr />
         <h2>Clubs</h2>
-        <div className="row">
+        <div className="row" id="clubsSection">
           {clubs.map((club, index) => (
             <div key={index} className="col-md-4">
               <ClubCard club={club} />
