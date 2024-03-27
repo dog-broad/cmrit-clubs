@@ -101,6 +101,32 @@ footer {
   align-items: center;
 }
 
+/* Club Card */
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Initial shadow */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+
 /* Animation for Club Cards */
 .club-card-animation-enter {
   opacity: 0;

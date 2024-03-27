@@ -31,12 +31,26 @@ const Header = () => {
   };
 
   const scrollToClubs = () => {
-    scroll.scrollTo('clubsSection', {
-      duration: 800,
-      smooth: 'easeInOutQuart',
-    });
+    const clubsSection = document.getElementById('clubsSection');
+    if (!clubsSection) {
+      // If clubs section is not found, navigate to home page
+      handleNavigateToHome();
+      // Delay scrolling to ensure navigation completes
+      setTimeout(() => {
+        scroll.scrollTo('clubsSection', {
+          duration: 800,
+          smooth: 'easeInOutQuart',
+        });
+      }, 500); // Adjust delay time as needed
+    } else {
+      // If clubs section is found, scroll to it
+      scroll.scrollTo('clubsSection', {
+        duration: 800,
+        smooth: 'easeInOutQuart',
+      });
+    }
   };
-
+  
   return (
     <Navbar bg="light" expand="lg">
       <Container className="text-center">
