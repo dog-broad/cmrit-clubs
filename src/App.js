@@ -1,9 +1,11 @@
 // src/App.js
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import ClubCard from './components/ClubCard';
 import EventCarousel from './components/EventCarousel';
 import Footer from './components/Footer';
+import AboutUs from './components/AboutUs'; // Import your About Us page component
 
 const clubs = [
   {
@@ -70,23 +72,30 @@ const events = [
 
 function App() {
   return (
-    <div>
-      <Header />
-      <div className="container mt-4">
-        <h2>Events</h2>
-        <EventCarousel events={events} />
-        <hr />
-        <h2>Clubs</h2>
-        <div className="row" id="clubsSection">
-          {clubs.map((club, index) => (
-            <div key={index} className="col-md-4">
-              <ClubCard club={club} />
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={
+            <div className="container mt-4">
+              <h2>Events</h2>
+              <EventCarousel events={events} />
+              <hr />
+              <h2>Clubs</h2>
+              <div className="row" id="clubsSection">
+                {clubs.map((club, index) => (
+                  <div key={index} className="col-md-4">
+                    <ClubCard club={club} />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          } />
+          <Route path="/about-us" element={<AboutUs />} />
+        </Routes>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

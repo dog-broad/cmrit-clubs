@@ -5,8 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.png'; // Import your college logo
 import { Link, animateScroll as scroll } from 'react-scroll';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleNavigateToAboutUs = () => {
+    navigate('/about-us');
+  };
+
+  const handleNavigateToHome = () => {
+    navigate('/');
+  }
   const scrollToClubs = () => {
     scroll.scrollTo('clubsSection', {
       duration: 800,
@@ -17,7 +27,7 @@ const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container className="text-center">
-        <Navbar.Brand href="#home" className="d-flex align-items-center justify-content-center mx-auto">
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center justify-content-center mx-auto">
           <img
             src={logo}
             width="90"
@@ -38,10 +48,9 @@ const Header = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end" style={{ width: "100%" }}>
+            <Nav.Link onClick={handleNavigateToHome}>Home</Nav.Link>
             <Nav.Link as={Link} onClick={scrollToClubs} to="clubsSection" smooth={true} duration={800}>Clubs</Nav.Link>
-            {/* Add more navigation links as needed */}
-            <Nav.Link href="#about">About Us</Nav.Link>
-            {/* Add more navigation links as needed */}
+            <Nav.Link onClick={handleNavigateToAboutUs}>About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
